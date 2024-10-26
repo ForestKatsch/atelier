@@ -1,20 +1,18 @@
-# Welcome to your Expo app 👋
-
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Atelier
 
 ## Get started
 
 1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+```bash
+yarn install
+```
 
 2. Start the app
 
-   ```bash
-    npx expo start
-   ```
+```bash
+yarn start
+```
 
 In the output, you'll find options to open the app in a
 
@@ -25,26 +23,17 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Changelog
 
-When you're ready, run:
+### 0.1.1
 
-```bash
-npm run reset-project
-```
+- Update paths to remove the need for `@/src/...`
+- Fix some styling issues caused by incorrect Prettier config
+- Add TanStack Query
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 0.1.0
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Set up Expo Prebuild (run with `yarn prebuild`)
+- Added `prettier` (run with `yarn fix:prettier`)
+- Built `yarn fix:version` to automatically write package.json's version to app.json
+- Added `eslint` (run with `yarn lint`)

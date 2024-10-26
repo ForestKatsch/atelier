@@ -1,14 +1,18 @@
 {
   "name": "atelier",
-  "license": "0BSD",
+  "license": "MIT",
   "main": "expo-router/entry",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "scripts": {
-    "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "start": "yarn fix:version && expo start",
+    "android": "yarn fix:version && expo run:android",
+    "ios": "yarn fix:version && expo run:ios",
+    "web": "yarn fix:version && expo start --web",
+    "prebuild": "yarn fix:version && expo prebuild",
+    "precommit": "yarn fix:version && yarn fix:prettier && yarn lint && yarn test",
+    "fix:version": "tsx scripts/fix-version.ts",
+    "fix:prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "fix": "yarn fix:version && yarn fix:prettier",
     "test": "jest --watchAll",
     "lint": "expo lint"
   },
@@ -16,8 +20,8 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "7.0.0-rc.20",
+    "@tanstack/react-query": "^5.59.16",
     "expo": "~52.0.0-preview.5",
     "expo-blur": "~14.0.1",
     "expo-constants": "~17.0.1",
@@ -44,9 +48,13 @@
     "@types/jest": "^29.5.12",
     "@types/react": "~18.3.12",
     "@types/react-test-renderer": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-expo": "~8.0.1",
     "jest": "^29.2.1",
     "jest-expo": "~52.0.0-preview.1",
+    "prettier": "^3.3.3",
     "react-test-renderer": "18.3.1",
+    "tsx": "^4.19.1",
     "typescript": "^5.3.3"
   },
   "private": true
